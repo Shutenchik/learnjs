@@ -2,24 +2,25 @@
 // Что выведет код ниже?
 // alert( null || 2 || undefined ); выведет 2, т.к. это первое истинное значение
 
-alert( null || 2 || undefined );
+// alert( null || 2 || undefined );
 
 // task 2
 // Что выведет код ниже?
 // alert( alert(1) || 2 || alert(3) ); -  2, нужно будет обьяснить!!!!! т.к. сначала идет 1 потом 2
 
-alert( alert(1) || 2 || alert(3) );
+// alert( alert(1) || 2 || alert(3) );
 
 // task 3
 // Что выведет код ниже?
 // alert( 1 && null && 2 ); - null, т.к. это первое ложное значение.
 
-alert( 1 && null && 2 );
+// alert( 1 && null && 2 );
 
 // task 4
 // Что выведет код ниже?
 // alert( alert(1) && alert(2) ); - 1 и undefined (исходя из обьяснения решения 2-й задачи.)
-alert( alert(1) && alert(2) );
+
+// alert( alert(1) && alert(2) );
 
 
 // task 5
@@ -28,56 +29,56 @@ alert( alert(1) && alert(2) );
 // первым выполнится 2 && 3 - выше приоритет, т.к. 2 и 3 обы истинные знач. берем 3, т.к. это последний операнд
 // вторым выполнится null || 3 выведет - null - ложное идем дальше, опять 3 - останавливаемся, т.к. истинное значение и возвращаем 3.
 
-alert( null || 2 && 3 || 4 );
+// alert( null || 2 && 3 || 4 );
 
 
 // task 6
 // Напишите условие if для проверки, что переменная age находится в диапазоне между 14 и 90 включительно.
 // «Включительно» означает, что значение переменной age может быть равно 14 или 90.
 
-let age = prompt('How old are you?');
-
-if ( !age.isNaN) {
-    alert('Это не число!');
-}
-
-if ( age >= 14 && age <= 90 ) {
-    alert('Hello, have fun!');
-} else {
-    alert('Sorry, but your age is ////');
-}
+// let age = prompt('How old are you?');
+//
+// if (Number.isNaN(age)) {
+//     alert('Это не число!');
+// }
+//
+// if ( age >= 14 && age <= 90 ) {
+//     alert('Hello, have fun!');
+// } else {
+//     alert('Sorry, but your age is ////');
+// }
 
 
 // task 7
 // Напишите условие if для проверки, что значение переменной age НЕ находится в диапазоне 14 и 90 включительно.
 // Напишите два варианта: первый с использованием оператора НЕ !, второй – без этого оператора.
 
-let age1 = prompt('How old are you?');
-
-if ( !age1.isNaN) {
-    alert('Это не число!');
-}
-
-if ( !(age1 >= 14 && age1 <= 90) ) {
-    alert('вариант через !НЕ')
-}
-
-if ( age1 < 14 || age1 > 90 ) {
-    alert('вариант через ||ИЛИ');
-}
+// let age1 = prompt('How old are you?');
+//
+// if (Number.isNaN(age1)) {
+//     alert('Это не число!');
+// }
+//
+// if ( !(age1 >= 14 && age1 <= 90) ) {
+//     alert('вариант через !НЕ')
+// }
+//
+// if ( age1 < 14 || age1 > 90 ) {
+//     alert('вариант через ||ИЛИ');
+// }
 
 // task 8
 // Какие из перечисленных ниже alert выполнятся?
 // Какие конкретно значения будут результатами выражений в условиях if(...)?
 
 //   true || false => true (-1)
-if ( -1 || 0) alert( 'first' );
-
-//   true false => false (0)
-if (-1 && 0) alert( 'second' );
-
-//   false || true => true && true => true (1)
-if (null || -1 && 1) alert( 'third' );
+// if ( -1 || 0) alert( 'first' );
+//
+// //   true false => false (0)
+// if (-1 && 0) alert( 'second' );
+//
+// //   false || true => true && true => true (1)
+// if (null || -1 && 1) alert( 'third' );
 
 // выполнятся 1 и 3 условие
 
@@ -92,19 +93,41 @@ if (null || -1 && 1) alert( 'third' );
 // Иначе – «Неверный пароль»,
 // При отмене – «Отменено».
 
- let login = prompt('Кто там?', '');
+//  let login = prompt('Кто там?', '');
+//
+//  if ( login === 'Админ' ) {
+//    let psw = prompt('Пароль?', '');
+//    if ( psw === 'Я главный' ) {
+//        alert('Здравствуйте!');
+//    } else if ( psw === '' || psw === null  ) {
+//      alert('Отменено');
+//    } else {
+//      alert('Неверный пароль');
+//    }
+// } else if ( login === '' || login === null ) {
+//    alert('Отменено');
+// } else {
+//    alert('Я вас не знаю');
+//  }
 
- if ( login === 'Админ' ) {
-   let psw = prompt('Пароль?', '');
-   if ( psw === 'Я главный' ) {
-       alert('Здравствуйте!');
-   } else if ( psw === '' || psw === null  ) {
-     alert('Отменено');
-   } else {
-     alert('Неверный пароль');
-   }
-} else if ( login === '' || login === null ) {
-   alert('Отменено');
+
+// console.log(log(log(log(1))), log(log(log(2)))); // 'undefined', 'undefined',
+//
+// function log(a) {
+//   console.log(a);
+//   return a+1;
+// };
+
+let ticket = prompt('Билет Есть?', '');
+let age = Number.parseInt(prompt('Your Age', ''));
+
+if ( ticket === 'yes' && age >= 16 ) {
+  let cola = prompt('Кола Есть?', '');
+  if (cola != 'yes') {
+    prompt('Коллу будешь?', '');
+  } else {
+    alert('Приятного просмотра!');
+  }
 } else {
-   alert('Я вас не знаю');
- }
+  alert('Извините, но вам нельзя!');
+}
